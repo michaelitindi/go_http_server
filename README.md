@@ -1,6 +1,11 @@
+
 # Go HTTP Server
 
 A simple HTTP web server built with Go.
+
+## AI prompt used
+
+I want to build the http web server in Go. I want you to direct me step by step on what file I need to create and what code I need to put line by line
 
 ## Prerequisites
 
