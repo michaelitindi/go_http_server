@@ -1,37 +1,61 @@
-# Go (Golang) Codespaces starter template
+# Go HTTP Server
 
-Welcome, Gopher! This repository is a template for you to use in your next (or existing) Go project so you can take advantage of [Visual Studio Codespaces](https://visualstudio.microsoft.com/services/visual-studio-codespaces/), or the brand-new [GitHub Codespaces](https://github.com/features/codespaces).
+A simple HTTP web server built with Go.
 
-## How to get started on a new repository
+## Prerequisites
 
-The easiest way to get started is on a new repository. For that, simply click on the green "Use this template" button, right above the list of files.
+- Go 1.16 or higher installed on your system
 
-After you do, a list of options for creating a _new_ repository will pop up. After you're done, a brand new repository will be created for you, wherever you told it to. And it'll be pre-populated with everything you need to be up and running with Codespaces.
+## Installation
 
-## How to get started with an existing repository
+1. **Install Go** (if not already installed)
+   - Visit [golang.org](https://golang.org/dl) and download the latest version
+   - Follow the installation instructions for your operating system
 
-TODO
+2. **Clone or navigate to this repository**
+   ```bash
+   cd go_http_server
+   ```
 
-## Testing this out
+## Running the Server
 
-This template sets up Go entirely inside a Docker image. To test it, make sure you have [Docker](https://docker.com) installed and run the below command from the root of this repository:
+Start the server with:
 
-```console
-$ cd .devcontainer
-$ docker build .
-$ cd ..
+```bash
+go run server.go main.go
 ```
 
->When you run the command, make sure to remove the leading `$`
+You should see:
+```
+=== Go HTTP Server ===
 
-## Built on the Shoulders of Giants
+Starting the HTTP server...
 
-Like almost every developer who contributes to open source, I didn't write this code in a vacuum. I had help! Thank you to the following contributors for helping me build this:
+Server starting on http://localhost:8080
+```
 
-- [`bnb`](https://github.com/bnb) for code from [codespaces-examples/node](https://github.com/codespaces-examples/node
-)
-- [`asw101`](https://github.com/asw101) for code from [`asw101/hello-vso`](https://github.com/asw101/hello-vso)
+## Accessing the Server
 
-I took inspiration, and sometimes code, from their repositories.
+Open your browser and visit:
 
->I took code and ideas _directly_ from these developers' repositories. There are countless other projects and technologies that this repository implicitly relies on, and the list of contributors behind those projects is too long to write here. Thank you to every one of those contributors.
+- **Home**: http://localhost:8080/
+- **About**: http://localhost:8080/about
+- **Users**: http://localhost:8080/users
+
+Or use `curl` from the command line:
+
+```bash
+curl http://localhost:8080/
+curl http://localhost:8080/about
+curl http://localhost:8080/users
+```
+
+## Stopping the Server
+
+Press **Ctrl+C** in the terminal where the server is running.
+
+## Project Files
+
+- `main.go` - Entry point that starts the server
+- `server.go` - HTTP server with route handlers
+- `go.mod` - Go module file with dependencies
